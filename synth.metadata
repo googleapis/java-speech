@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-09-16T21:34:04.023861Z",
+  "updateTime": "2019-09-16T21:36:13.131232Z",
   "sources": [
     {
       "generator": {
@@ -15,13 +15,6 @@
         "sha": "6b2ba2ae3124c22ecb56af7102c78110b8576671",
         "internalRef": "268974829"
       }
-    },
-    {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2019.5.2"
-      }
     }
   ],
   "destinations": [
@@ -33,16 +26,6 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/speech/artman_speech_v1.yaml"
-      }
-    },
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "speech",
-        "apiVersion": "v1p1beta1",
-        "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/speech/artman_speech_v1p1beta1.yaml"
       }
     }
   ]
