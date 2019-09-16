@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>1.20.0</version>
+  <version>1.21.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
