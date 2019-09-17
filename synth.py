@@ -22,7 +22,7 @@ gapic = gcp.GAPICGenerator()
 
 service = 'speech'
 versions = ['v1', 'v1p1beta1']
-config_pattern = '/google/cloud/speech/artman_speech_{version}.yaml'
+config_pattern = 'artman_speech_{version}.yaml'
 
 
 # License header
@@ -67,35 +67,36 @@ for version in versions:
         artman_output_name='',
         include_samples=True)
 
-    s.replace(
-        library / f'proto-google-cloud-{service}-{version}/src/**/*.java',
-        protobuf_header,
-        f"{license}{protobuf_header}"
-    )
-    s.replace(
-        library / f'grpc-google-cloud-{service}-{version}/src/**/*.java',
-        f"package com.google.cloud.{service}.{version};",
-        f"{license}package com.google.cloud.{service}.{version};"
-    )
-    s.replace(
-        library / f'proto-google-cloud-{service}-{version}/src/**/*Name.java',
-        bad_license,
-        license
-    )
+    # s.replace(
+    #     library / f'proto-google-cloud-{service}-{version}/src/**/*.java',
+    #     protobuf_header,
+    #     f"{license}{protobuf_header}"
+    # )
+    # s.replace(
+    #     library / f'grpc-google-cloud-{service}-{version}/src/**/*.java',
+    #     f"package com.google.cloud.{service}.{version};",
+    #     f"{license}package com.google.cloud.{service}.{version};"
+    # )
+    # s.replace(
+    #     library / f'proto-google-cloud-{service}-{version}/src/**/*Name.java',
+    #     bad_license,
+    #     license
+    # )
 
-    s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'./google-cloud-{service}/src')
-    s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'./grpc-google-cloud-{service}-{version}/src')
-    s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'./proto-google-cloud-{service}-{version}/src')
-    s.copy(library / f'gapic-google-cloud-{service}-{version}/samples/src', 'samples/src')
+    # s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'./google-cloud-{service}/src')
+    # s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'./grpc-google-cloud-{service}-{version}/src')
+    # s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'./proto-google-cloud-{service}-{version}/src')
+    s.copy(library / f'gapic-google-cloud-{service}-{version}/samples', 'samples')
 
-    java.format_code(f'./grpc-google-cloud-{service}-{version}/src')
-    java.format_code(f'./proto-google-cloud-{service}-{version}/src')
+    # java.format_code(f'./grpc-google-cloud-{service}-{version}/src')
+    # java.format_code(f'./proto-google-cloud-{service}-{version}/src')
 
 java.format_code(f'./google-cloud-{service}/src')
-
-common_templates = gcp.CommonTemplates()
-templates = common_templates.java_library()
-s.copy(templates, excludes=[
-  '.gitignore',
-  'README.md',
-])
+# java.format_code(f'./samples/src')
+#
+# common_templates = gcp.CommonTemplates()
+# templates = common_templates.java_library()
+# s.copy(templates, excludes=[
+#   '.gitignore',
+#   'README.md',
+# ])

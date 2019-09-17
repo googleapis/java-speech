@@ -1,0 +1,8 @@
+type: manifest/samples
+schema_version: 3
+base: &common
+  env: 'java'
+  bin: 'mvn exec:java -q -D{sample} -Dexec.args="@args"'
+  chdir: '{@manifest_dir}/../..'
+  basepath: '.'
+samples:

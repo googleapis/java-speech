@@ -22,6 +22,8 @@
 
 package com.google.cloud.examples.speech.v1p1beta1;
 
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
 import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
 import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
@@ -44,6 +46,8 @@ public class SpeechTranscribeDiarizationBeta {
   /*
    * Please include the following imports to run this sample.
    *
+   * import com.google.api.gax.longrunning.OperationFuture;
+   * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
    * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
    * import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
    * import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
