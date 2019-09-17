@@ -6,3 +6,27 @@ base: &common
   chdir: '{@manifest_dir}/../..'
   basepath: '.'
 samples:
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechAdaptationBeta.java'
+  sample: 'speech_adaptation_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeWordLevelConfidenceBeta.java'
+  sample: 'speech_transcribe_word_level_confidence_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeAutoPunctuationBeta.java'
+  sample: 'speech_transcribe_auto_punctuation_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechContextsClassesBeta.java'
+  sample: 'speech_contexts_classes_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeRecognitionMetadataBeta.java'
+  sample: 'speech_transcribe_recognition_metadata_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechQuickstartBeta.java'
+  sample: 'speech_quickstart_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeMultilanguageBeta.java'
+  sample: 'speech_transcribe_multilanguage_beta'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1p1beta1/SpeechTranscribeDiarizationBeta.java'
+  sample: 'speech_transcribe_diarization_beta'

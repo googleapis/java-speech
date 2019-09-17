@@ -6,3 +6,33 @@ base: &common
   chdir: '{@manifest_dir}/../..'
   basepath: '.'
 samples:
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncWordTimeOffsetsGcs.java'
+  sample: 'speech_transcribe_async_word_time_offsets_gcs'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelectionGcs.java'
+  sample: 'speech_transcribe_model_selection_gcs'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsync.java'
+  sample: 'speech_transcribe_async'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSync.java'
+  sample: 'speech_transcribe_sync'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeSyncGcs.java'
+  sample: 'speech_transcribe_sync_gcs'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannelGcs.java'
+  sample: 'speech_transcribe_multichannel_gcs'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeModelSelection.java'
+  sample: 'speech_transcribe_model_selection'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeEnhancedModel.java'
+  sample: 'speech_transcribe_enhanced_model'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeAsyncGcs.java'
+  sample: 'speech_transcribe_async_gcs'
+- <<: *common
+  path: '{basepath}/src/main/java/com/google/cloud/examples/speech/v1/SpeechTranscribeMultichannel.java'
+  sample: 'speech_transcribe_multichannel'
