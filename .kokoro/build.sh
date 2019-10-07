@@ -29,6 +29,7 @@ mvn install -B -V \
   -Dmaven.javadoc.skip=true \
   -Dgcloud.download.skip=true \
   -T 1C
+mvn dependency:go-offline
 
 # if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
@@ -37,8 +38,7 @@ fi
 
 case ${JOB_TYPE} in
 test)
-    mvn dependency:go-offline
-    mvn --fail-at-end -o verify
+    mvn -B -o test
     bash ${KOKORO_GFILE_DIR}/codecov.sh
     ;;
 lint)
@@ -48,7 +48,7 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
+    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -o -fae verify
     ;;
 *)
     ;;
