@@ -37,7 +37,8 @@ fi
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B
+    mvn dependency:go-offline
+    mvn --fail-at-end -o verify
     bash ${KOKORO_GFILE_DIR}/codecov.sh
     ;;
 lint)
