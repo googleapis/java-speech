@@ -51,7 +51,7 @@ samples)
     pushd samples
     python3 -m pip install sample-tester
     pyenv rehash
-    find src/ -name '*.yaml' | xargs sample-tester
+    find src/ -name '*.yaml' | xargs sample-tester --xunit=target/samples-sponge_log.xml
     popd
     ;;
 integration)
