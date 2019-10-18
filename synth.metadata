@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-10-18T17:41:25.106350Z",
+  "updateTime": "2019-10-18T18:13:16.578491Z",
   "sources": [
     {
       "generator": {
@@ -14,13 +14,6 @@
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "906335b5a958557e1070fc6f275171dc8a42b1ec",
         "internalRef": "275374583"
-      }
-    },
-    {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2019.5.2"
       }
     }
   ],
