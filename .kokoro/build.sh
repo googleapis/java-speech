@@ -47,6 +47,12 @@ lint)
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
+samples)
+    pushd samples
+    python3 -m pip install sample-tester
+    find src/ -name '*.yaml' | xargs sample-tester
+    popd
+    ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
     bash .kokoro/coerce_logs.sh
