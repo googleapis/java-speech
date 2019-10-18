@@ -50,6 +50,7 @@ javadoc)
 samples)
     pushd samples
     python3 -m pip install sample-tester
+    pyenv rehash
     find src/ -name '*.yaml' | xargs sample-tester
     popd
     ;;
