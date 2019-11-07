@@ -12,8 +12,6 @@ Java idiomatic client for [Google Cloud Speech][cloud-speech].
 
 Quickstart
 ----------
-
-[//]: # ({x-version-update-start:google-cloud-speech:released})
 If you are using Maven with Bom, Add this to your pom.xml file.
 ```xml
 <dependencyManagement>
@@ -33,6 +31,7 @@ If you are using Maven with Bom, Add this to your pom.xml file.
   <artifactId>google-cloud-speech</artifactId>
 </dependency>
 ```
+[//]: # ({x-version-update-start:google-cloud-speech:released})
 If you are using Maven without Bom, Add this to your dependencies.
 ```xml
 <dependency>
