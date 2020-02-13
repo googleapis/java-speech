@@ -79,7 +79,8 @@
             <phase>verify</phase>
             <configuration>
               <executable>python3</executable>
-              <commandlineArgs>-m sampletester.cli --xunit=target/generated-tests-sponge_log.xml src/main/java/**/*.yaml</commandlineArgs>
+              <commandlineArgs>-m sampletester.cli --xunit=target/TEST-samplegen-sponge_log.xml src/main/java/**/*.yaml</commandlineArgs>
+              <outputFile>target/samplegen-sponge_log.txt</outputFile>
             </configuration>
           </execution>
         </executions>
