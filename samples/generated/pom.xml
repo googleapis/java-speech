@@ -78,8 +78,8 @@
             </goals>
             <phase>verify</phase>
             <configuration>
-              <executable>sample-tester</executable>
-              <commandlineArgs>--xunit=target/generated-tests-sponge_log.xml src/main/java/**/*.yaml</commandlineArgs>
+              <executable>python3</executable>
+              <commandlineArgs>-m sampletester.cli --xunit=target/generated-tests-sponge_log.xml src/main/java/**/*.yaml</commandlineArgs>
             </configuration>
           </execution>
         </executions>
