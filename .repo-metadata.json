@@ -1,6 +1,6 @@
 {
   "name": "google-cloud-speech",
-  "name_pretty": "Google Cloud Speech",
+  "name_pretty": "Cloud Speech",
   "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-speech",

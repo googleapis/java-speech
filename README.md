@@ -1,6 +1,6 @@
-# Google Google Cloud Speech Client for Java
+# Google Cloud Speech Client for Java
 
-Java idiomatic client for [Google Cloud Speech][product-docs].
+Java idiomatic client for [Cloud Speech][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -62,7 +62,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Speech [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Speech [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -73,13 +73,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-speech` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-speech` as a dependency in your code.
 
-## About Google Cloud Speech
+## About Cloud Speech
 
 
-[Google Cloud Speech][product-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
+[Cloud Speech][product-docs] enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
 
-See the [Google Cloud Speech client library docs][javadocs] to learn how to
-use this Google Cloud Speech Client Library.
+See the [Cloud Speech client library docs][javadocs] to learn how to
+use this Cloud Speech Client Library.
 
 
 ### Recognizing speech
@@ -126,7 +126,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Speech uses gRPC for the transport layer.
+Cloud Speech uses gRPC for the transport layer.
 
 ## Java Versions
 
