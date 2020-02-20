@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>3.5.0</version>
+      <version>4.1.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -82,6 +82,42 @@ See the [Google Cloud Speech client library docs][javadocs] to learn how to
 use this Google Cloud Speech Client Library.
 
 
+### Recognizing speech
+The following code sample shows how to recognize speech using an audio file from a Cloud Storage bucket as input.
+First, add the following imports at the top of your file:
+
+```java
+import com.google.cloud.speech.v1.SpeechClient;
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1.RecognizeResponse;
+```
+Then add the following code to do the speech recognization:
+```java
+ try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+   int sampleRateHertz = 44100;
+   String languageCode = "en-US";
+   RecognitionConfig config = RecognitionConfig.newBuilder()
+     .setEncoding(encoding)
+     .setSampleRateHertz(sampleRateHertz)
+     .setLanguageCode(languageCode)
+     .build();
+   String uri = "gs://bucket_name/file_name.flac";
+   RecognitionAudio audio = RecognitionAudio.newBuilder()
+     .setUri(uri)
+     .build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+```
+
+#### Complete source code
+
+In [RecognizeSpeech.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/speech/snippets/RecognizeSpeech.java) we put a quick start example, which shows how you can use Google Speech API to automatically recognize speech based on a local file.
+
+For an example audio file, you can use the [audio.raw](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/speech/cloud-client/resources/audio.raw) file from the samples repository.
+Note, to play the file on Unix-like system you may use the following command: `play -t raw -r 16k -e signed -b 16 -c 1 audio.raw`
 
 
 ## Troubleshooting
