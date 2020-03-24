@@ -183,19 +183,42 @@ public final class SpeechGrpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static SpeechStub newStub(io.grpc.Channel channel) {
-    return new SpeechStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SpeechStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechStub>() {
+          @java.lang.Override
+          public SpeechStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechStub(channel, callOptions);
+          }
+        };
+    return SpeechStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static SpeechBlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new SpeechBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingStub>() {
+          @java.lang.Override
+          public SpeechBlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechBlockingStub(channel, callOptions);
+          }
+        };
+    return SpeechBlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static SpeechFutureStub newFutureStub(io.grpc.Channel channel) {
-    return new SpeechFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<SpeechFutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechFutureStub>() {
+          @java.lang.Override
+          public SpeechFutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechFutureStub(channel, callOptions);
+          }
+        };
+    return SpeechFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -290,11 +313,7 @@ public final class SpeechGrpc {
    * Service that implements Google Cloud Speech API.
    * </pre>
    */
-  public static final class SpeechStub extends io.grpc.stub.AbstractStub<SpeechStub> {
-    private SpeechStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class SpeechStub extends io.grpc.stub.AbstractAsyncStub<SpeechStub> {
     private SpeechStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -367,11 +386,7 @@ public final class SpeechGrpc {
    * </pre>
    */
   public static final class SpeechBlockingStub
-      extends io.grpc.stub.AbstractStub<SpeechBlockingStub> {
-    private SpeechBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<SpeechBlockingStub> {
     private SpeechBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -420,11 +435,8 @@ public final class SpeechGrpc {
    * Service that implements Google Cloud Speech API.
    * </pre>
    */
-  public static final class SpeechFutureStub extends io.grpc.stub.AbstractStub<SpeechFutureStub> {
-    private SpeechFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+  public static final class SpeechFutureStub
+      extends io.grpc.stub.AbstractFutureStub<SpeechFutureStub> {
     private SpeechFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
