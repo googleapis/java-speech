@@ -1,11 +1,12 @@
 {
-  "updateTime": "2020-03-24T09:54:14.105182Z",
+  "updateTime": "2020-03-24T09:56:32.138109Z",
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "1.1.1",
-        "dockerImage": "googleapis/artman@sha256:5ef340c8d9334719bc5c6981d95f4a5d2737b0a6a24f2b9a0d430e96fff85c5b"
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "64ab9744073de81fec1b3a6a931befc8a90edf90",
+        "internalRef": "301373760"
       }
     },
     {
@@ -31,8 +32,7 @@
         "apiName": "speech",
         "apiVersion": "v1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/speech/artman_speech_v1.yaml"
+        "generator": "bazel"
       }
     },
     {
@@ -41,8 +41,7 @@
         "apiName": "speech",
         "apiVersion": "v1p1beta1",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/speech/artman_speech_v1p1beta1.yaml"
+        "generator": "bazel"
       }
     }
   ]
