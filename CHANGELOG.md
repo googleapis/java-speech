@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.22.7](https://www.github.com/googleapis/java-speech/compare/v1.22.6...v1.22.7) (2020-04-20)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v29 ([#141](https://www.github.com/googleapis/java-speech/issues/141)) ([b3fdac9](https://www.github.com/googleapis/java-speech/commit/b3fdac93cef38cd62e74dbf5309f316791271ded))
+
 ### [1.22.6](https://www.github.com/googleapis/java-speech/compare/v1.22.5...v1.22.6) (2020-04-07)
 
 
