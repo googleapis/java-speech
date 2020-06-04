@@ -4,30 +4,30 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "10b6412657c5babf6dfab973165a4ba9ad110bf9"
+        "sha": "979ff2fe45524638b1aafd8a6eae141fc17ab1a7"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d61e1cb40184a7ad63ef37b1813f6608718674a",
-        "internalRef": "306280989"
+        "sha": "5a90d467aa65e7f038f87585e8fbb45d74475e7c",
+        "internalRef": "312088359"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d61e1cb40184a7ad63ef37b1813f6608718674a",
-        "internalRef": "306280989"
+        "sha": "5a90d467aa65e7f038f87585e8fbb45d74475e7c",
+        "internalRef": "312088359"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "19465d3ec5e5acdb01521d8f3bddd311bcbee28d"
+        "sha": "98c50772ec23295c64cf0d2ddf199ea52961fd4c"
       }
     }
   ],
