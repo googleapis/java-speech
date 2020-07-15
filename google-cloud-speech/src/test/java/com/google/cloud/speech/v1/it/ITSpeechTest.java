@@ -148,6 +148,10 @@ public class ITSpeechTest {
   }
 
   public RecognitionAudio audio() {
+    String path = System.getenv("AUDIO_PATH");
+    if (path != null) {
+      return RecognitionAudio.newBuilder().setUri(path).build();
+    }
     return RecognitionAudio.newBuilder().setUri("gs://gapic-toolkit/hello.flac").build();
   }
 }
