@@ -39,11 +39,11 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.CODE_SUGGESTER_ACCESS_TOKEN }}
         with:
           command: pr
-          upstream_owner: chingor13
-          upstream_repo: actions-test
+          upstream_owner: googleapis
+          upstream_repo: java-speech
           description: "Running synthtool"
-          title: "chore: regenerate common templates"
-          message: "chore: regenerate common templates"
+          title: "chore: regenerate README"
+          message: "chore: regenerate README"
           branch: synthtool-templates
           force: true
           git_dir: "."
