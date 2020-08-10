@@ -45,4 +45,7 @@ s.replace(
   f'\g<1>{vpcsc_skip_code}'
 )
 
-java.common_templates()
+java.common_templates(excludes=[
+    'README.md',
+])
+

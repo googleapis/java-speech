@@ -1,0 +1,50 @@
+# Copyright 2020 Google LLC
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     https://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+on:
+  push:
+    branches:
+      - readme-action
+name: generate-templates
+jobs:
+  templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install synthtool
+        run: pip install git+https://github.com/chingor13/synthtool.git@skip-template-copy
+      - name: Run synthtool
+        run: python3 -m synthtool .kokoro/readme-synth.py --metadata=/tmp/synth.metadata
+      - name: Detect Code Changes
+        id: has_changes
+        run: "test $(git status --porcelain | grep -v synth.metadata | wc -l) -gt 0"
+        continue-on-error: true
+      - name: Open Pull Request
+        if: ${{ steps.has_changes.outcome == 'success' }}
+        uses: googleapis/code-suggester@v1.1.0
+        env:
+          ACCESS_TOKEN: ${{ secrets.CODE_SUGGESTER_ACCESS_TOKEN }}
+        with:
+          command: pr
+          upstream_owner: chingor13
+          upstream_repo: actions-test
+          description: "Running synthtool"
+          title: "chore: regenerate common templates"
+          message: "chore: regenerate common templates"
+          branch: synthtool-templates
+          force: true
+          git_dir: "."
+
