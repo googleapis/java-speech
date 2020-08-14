@@ -151,6 +151,8 @@ public class ITSpeechTest {
     if (audio_gcs_uri != null) {
       return RecognitionAudio.newBuilder().setUri(audio_gcs_uri).build();
     }
-    return RecognitionAudio.newBuilder().setUri("gs://cloud-samples-data/speech/hello.flac").build();
+    return RecognitionAudio.newBuilder()
+        .setUri("gs://cloud-samples-data/speech/hello.flac")
+        .build();
   }
 }
