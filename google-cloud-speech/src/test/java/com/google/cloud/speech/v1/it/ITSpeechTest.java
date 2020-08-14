@@ -142,6 +142,7 @@ public class ITSpeechTest {
             .setLanguageCode(languageCode)
             .setSampleRateHertz(sampleRateHertz)
             .setEncoding(encoding)
+            .setAudioChannelCount(2)
             .build();
     return config;
   }
