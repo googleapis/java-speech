@@ -31,7 +31,7 @@ jobs:
       - name: Run synthtool
         run: python3 -m synthtool .kokoro/readme-synth.py --metadata=readme-synth.metadata
         env:
-          - SYNTHTOOL_TRACK_OBSOLETE_FILES: true
+          SYNTHTOOL_TRACK_OBSOLETE_FILES: true
       - name: Detect Code Changes
         id: has_changes
         run: "test $(git status --porcelain | grep -v synth.metadata | wc -l) -gt 0"
