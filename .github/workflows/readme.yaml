@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
       - name: Open Pull Request
         if: ${{ steps.has_changes.outcome == 'success' }}
-        uses: chingor13/code-suggester@vfork-cli
+        uses: chingor13/code-suggester@fork-cli
         env:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
