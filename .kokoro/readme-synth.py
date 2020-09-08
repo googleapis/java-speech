@@ -17,5 +17,4 @@
 import synthtool as s
 import synthtool.languages.java as java
 
-templates = java.common_templates(copy=False)
-s.copy(templates / 'README.md')
+java.common_templates()
