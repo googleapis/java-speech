@@ -27,7 +27,7 @@ jobs:
       - name: Install synthtool
         run: pip install git+https://github.com/chingor13/synthtool.git@skip-template-copy
       - name: Run synthtool
-        run: python3 -m synthtool .kokoro/readme-synth.py --metadata=/tmp/synth.metadata
+        run: python3 -m synthtool
       - name: Detect Code Changes
         id: has_changes
         run: "test $(git status --porcelain | grep -v synth.metadata | wc -l) -gt 0"
@@ -42,8 +42,8 @@ jobs:
           upstream_owner: googleapis
           upstream_repo: java-speech
           description: "Running synthtool"
-          title: "chore: regenerate README"
-          message: "chore: regenerate README"
+          title: "chore: regenerate common templates"
+          message: "chore: regenerate common templates"
           branch: synthtool-templates
           force: true
           git_dir: "."
