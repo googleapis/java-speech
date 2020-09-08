@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 on:
+  schedule:
+    - cron: '0 1,13 * * *'
   push:
     branches:
       - readme-action
@@ -27,7 +29,9 @@ jobs:
       - name: Install synthtool
         run: pip install git+https://github.com/googleapis/synthtool.git
       - name: Run synthtool
-        run: python3 -m synthtool .kokoro/readme-synth.py --metadata=/tmp/synth.metadata
+        run: python3 -m synthtool .kokoro/readme-synth.py --metadata=readme-synth.metadata
+        env:
+          - SYNTHTOOL_TRACK_OBSOLETE_FILES: true
       - name: Detect Code Changes
         id: has_changes
         run: "test $(git status --porcelain | grep -v synth.metadata | wc -l) -gt 0"
