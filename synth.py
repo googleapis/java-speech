@@ -44,8 +44,3 @@ s.replace(
   r'(\s+public void run.*)',
   f'\g<1>{vpcsc_skip_code}'
 )
-
-java.common_templates(excludes=[
-    'README.md',
-])
-
