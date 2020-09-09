@@ -40,7 +40,7 @@ jobs:
         if: ${{ steps.has_changes.outcome == 'success' }}
         uses: chingor13/code-suggester@fork-cli2
         env:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.CODE_SUGGESTER_ACCESS_TOKEN }}
         with:
           command: pr
           upstream_owner: googleapis
@@ -51,5 +51,4 @@ jobs:
           branch: synthtool-templates
           force: true
           git_dir: "."
-          fork: false
-
+          fork: true
