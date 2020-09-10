@@ -38,7 +38,7 @@ jobs:
         continue-on-error: true
       - name: Open Pull Request
         if: ${{ steps.has_changes.outcome == 'success' }}
-        uses: chingor13/code-suggester@fork-cli2
+        uses: googleapis/code-suggester@v1.5.0
         env:
           ACCESS_TOKEN: ${{ secrets.CODE_SUGGESTER_ACCESS_TOKEN }}
         with:
