@@ -44,8 +44,6 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-speech:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-speech:1.24.3'
@@ -54,7 +52,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.24.3"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
