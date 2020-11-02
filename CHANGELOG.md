@@ -1,5 +1,42 @@
 # Changelog
 
+### [1.24.6](https://www.github.com/googleapis/java-speech/compare/v1.24.5...v1.24.6) (2020-10-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#340](https://www.github.com/googleapis/java-speech/issues/340)) ([548ea07](https://www.github.com/googleapis/java-speech/commit/548ea0765abb2cb451f5cedfcea16b13c79ad8a9))
+
+### [1.24.5](https://www.github.com/googleapis/java-speech/compare/v1.24.4...v1.24.5) (2020-10-21)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#323](https://www.github.com/googleapis/java-speech/issues/323)) ([2f96d75](https://www.github.com/googleapis/java-speech/commit/2f96d75c2dc91ebda4291ba5ffab569cafba712b))
+
+### [1.24.4](https://www.github.com/googleapis/java-speech/compare/v1.24.3...v1.24.4) (2020-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#316](https://www.github.com/googleapis/java-speech/issues/316)) ([163b0c9](https://www.github.com/googleapis/java-speech/commit/163b0c90d70dcc10289a58bb5bcd17a55bb124dc))
+
+### [1.24.3](https://www.github.com/googleapis/java-speech/compare/v1.24.2...v1.24.3) (2020-10-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#299](https://www.github.com/googleapis/java-speech/issues/299)) ([039421f](https://www.github.com/googleapis/java-speech/commit/039421fdd8c3a952b9d5b9ce7186834e514760d0))
+
+### [1.24.2](https://www.github.com/googleapis/java-speech/compare/v1.24.1...v1.24.2) (2020-09-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#287](https://www.github.com/googleapis/java-speech/issues/287)) ([3278afe](https://www.github.com/googleapis/java-speech/commit/3278afe284f70aa2f328798c24f31a3d50b9bf86))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#262](https://www.github.com/googleapis/java-speech/issues/262)) ([05e955c](https://www.github.com/googleapis/java-speech/commit/05e955ce763262018a8af66803f2236d46c4c36e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#270](https://www.github.com/googleapis/java-speech/issues/270)) ([3dfa458](https://www.github.com/googleapis/java-speech/commit/3dfa458b8708cd9389ece262b1b986c143d8de14))
+
 ### [1.24.1](https://www.github.com/googleapis/java-speech/compare/v1.24.0...v1.24.1) (2020-08-17)
 
 
