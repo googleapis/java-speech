@@ -918,41 +918,4 @@ public class Recognize {
     }
   }
   // [END speech_transcribe_multichannel_gcs]
-
-  // [START speech_transcribe_with_profanity_filter_gcs]
-  /**
-   * Transcribe a remote audio file with multi-channel recognition
-   *
-   * @param gcsUri the path to the audio file
-   */
-  public static void syncRecognizeWithProfanityFilterGcs(String gcsUri) throws Exception {
-    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
-    try (SpeechClient speech = SpeechClient.create()) {
-
-      // Configure remote file request 
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.FLAC)
-              .setLanguageCode("en-US")
-              .setSampleRateHertz(16000)
-              .setProfanityFilter(true)
-              .build();
-
-      // Set the remote path for the audio file
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-
-      // Use blocking call to get audio transcript
-      RecognizeResponse response = speech.recognize(config, audio);
-      List<SpeechRecognitionResult> results = response.getResultsList();
-
-      for (SpeechRecognitionResult result : results) {
-        // There can be several alternative transcripts for a given chunk of speech. Just use the
-        // first (most likely) one here.
-        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-        System.out.printf("Transcription: %s\n", alternative.getTranscript());
-      }
-    } 
-  }
-  // [END speech_transcribe_with_profanity_filter_gcs]
-
 }
