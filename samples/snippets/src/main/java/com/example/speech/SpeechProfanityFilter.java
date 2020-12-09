@@ -29,7 +29,7 @@ import java.util.List;
 
 public class SpeechProfanityFilter {
 
-  public void speechProfanityFilter() throws IOException {
+  public void speechProfanityFilter() throws Exception {
     String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
     speechProfanityFilter(uriPath);
   }
