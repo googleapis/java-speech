@@ -47,7 +47,7 @@ public class SpeechProfanityFilterTest {
   }
 
   @Test
-  public void testSpeechProfanityFilter() throws IOException {
+  public void testSpeechProfanityFilter() throws Exception {
     SpeechProfanityFilter.speechProfanityFilter(AUDIO_FILE);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
