@@ -946,13 +946,13 @@ public class Recognize {
       List<SpeechRecognitionResult> results = response.getResultsList();
 
       for (SpeechRecognitionResult result : results) {
-          // There can be several alternative transcripts for a given chunk of speech. Just use the
-          // first (most likely) one here.
-          SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-          System.out.printf("Transcription: %s\n", alternative.getTranscript());
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+        System.out.printf("Transcription: %s\n", alternative.getTranscript());
       }
     } 
   }
   // [END speech_transcribe_with_profanity_filter_gcs]
-  
+
 }
