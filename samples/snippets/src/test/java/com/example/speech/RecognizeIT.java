@@ -82,6 +82,13 @@ public class RecognizeIT {
   }
 
   @Test
+  public void testRecognizeGcs() throws Exception {
+    Recognize.syncRecognizeWithProfanityFilterGcs(gcsAudioPath);
+    String got = bout.toString();
+    assertThat(got).contains("how old is the Brooklyn Bridge");
+  }
+
+  @Test
   public void testAsyncRecognizeFile() throws Exception {
     Recognize.asyncRecognizeFile(audioFileName);
     String got = bout.toString();
