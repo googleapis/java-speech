@@ -41,11 +41,6 @@ public class QuickstartSample {
       // The path to the audio file to transcribe
       String gcsUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
 
-      // Reads the audio file into memory
-      Path path = Paths.get(fileName);
-      byte[] data = Files.readAllBytes(path);
-      ByteString audioBytes = ByteString.copyFrom(data);
-
       // Builds the sync recognize request
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
