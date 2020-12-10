@@ -19,6 +19,7 @@ import com.google.common.base.Preconditions;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Assume;
+import org.junit.Assume;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
@@ -28,6 +29,9 @@ public class SpeechSmokeTest {
 
   @Test
   public void run() {
+    // Skip smoke tests if running in VPCSC because our V1 integration tests
+    // cover VPC-SC.
+    Assume.assumeTrue(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") == null);
     // Skip smoke tests if running in VPCSC because our V1 integration tests
     // cover VPC-SC.
     Assume.assumeTrue(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") == null);
