@@ -25,7 +25,13 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service that implements Google Cloud Speech API.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/speech/v1/cloud_speech.proto")
@@ -209,10 +215,23 @@ public final class SpeechGrpc {
     return SpeechFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
   public abstract static class SpeechImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
     public void recognize(
         com.google.cloud.speech.v1.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.RecognizeResponse>
@@ -220,14 +239,32 @@ public final class SpeechGrpc {
       asyncUnimplementedUnaryCall(getRecognizeMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous speech recognition: receive results via the
+     * google.longrunning.Operations interface. Returns either an
+     * `Operation.error` or an `Operation.response` which contains
+     * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+     * </pre>
+     */
     public void longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getLongRunningRecognizeMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech recognition: receive results while
+     * sending audio. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
     public io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeRequest>
         streamingRecognize(
             io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeResponse>
@@ -261,7 +298,13 @@ public final class SpeechGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
   public static final class SpeechStub extends io.grpc.stub.AbstractAsyncStub<SpeechStub> {
     private SpeechStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -272,7 +315,14 @@ public final class SpeechGrpc {
       return new SpeechStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
     public void recognize(
         com.google.cloud.speech.v1.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.RecognizeResponse>
@@ -281,7 +331,18 @@ public final class SpeechGrpc {
           getChannel().newCall(getRecognizeMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous speech recognition: receive results via the
+     * google.longrunning.Operations interface. Returns either an
+     * `Operation.error` or an `Operation.response` which contains
+     * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+     * </pre>
+     */
     public void longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -291,7 +352,14 @@ public final class SpeechGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech recognition: receive results while
+     * sending audio. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
     public io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeRequest>
         streamingRecognize(
             io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeResponse>
@@ -301,7 +369,13 @@ public final class SpeechGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
   public static final class SpeechBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SpeechBlockingStub> {
     private SpeechBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -313,13 +387,31 @@ public final class SpeechGrpc {
       return new SpeechBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
     public com.google.cloud.speech.v1.RecognizeResponse recognize(
         com.google.cloud.speech.v1.RecognizeRequest request) {
       return blockingUnaryCall(getChannel(), getRecognizeMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous speech recognition: receive results via the
+     * google.longrunning.Operations interface. Returns either an
+     * `Operation.error` or an `Operation.response` which contains
+     * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+     * </pre>
+     */
     public com.google.longrunning.Operation longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request) {
       return blockingUnaryCall(
@@ -327,7 +419,13 @@ public final class SpeechGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
   public static final class SpeechFutureStub
       extends io.grpc.stub.AbstractFutureStub<SpeechFutureStub> {
     private SpeechFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -339,14 +437,32 @@ public final class SpeechGrpc {
       return new SpeechFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1.RecognizeResponse>
         recognize(com.google.cloud.speech.v1.RecognizeRequest request) {
       return futureUnaryCall(getChannel().newCall(getRecognizeMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous speech recognition: receive results via the
+     * google.longrunning.Operations interface. Returns either an
+     * `Operation.error` or an `Operation.response` which contains
+     * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         longRunningRecognize(com.google.cloud.speech.v1.LongRunningRecognizeRequest request) {
       return futureUnaryCall(
