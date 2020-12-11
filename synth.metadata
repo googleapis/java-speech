@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
-        "internalRef": "346372957"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
-        "internalRef": "346372957"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -181,6 +181,7 @@
     "proto-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/WordInfoOrBuilder.java",
     "proto-google-cloud-speech-v1/src/main/proto/google/cloud/speech/v1/cloud_speech.proto",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/CustomClass.java",
+    "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/CustomClassName.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/CustomClassOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadata.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeMetadataOrBuilder.java",
@@ -189,6 +190,7 @@
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponse.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/LongRunningRecognizeResponseOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/PhraseSet.java",
+    "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/PhraseSetName.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/PhraseSetOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudio.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/RecognitionAudioOrBuilder.java",
