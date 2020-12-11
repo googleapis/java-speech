@@ -103,11 +103,19 @@ public class GrpcSpeechStub extends SpeechStub {
         SpeechStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcSpeechStub(SpeechStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcSpeechCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcSpeechStub(
       SpeechStubSettings settings,
       ClientContext clientContext,
