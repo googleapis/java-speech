@@ -32,18 +32,20 @@ import org.junit.runners.JUnit4;
 public class SpeechProfanityFilterTest {
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private ByteArrayOutputStream bout;
+  private PrintStream stdout;
   private PrintStream out;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    stdout = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(stdout);
   }
 
   @Test
