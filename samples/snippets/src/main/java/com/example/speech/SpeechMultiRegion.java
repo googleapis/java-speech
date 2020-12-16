@@ -41,7 +41,7 @@ public class SpeechMultiRegion {
    *
    * @param gcsUri the path to the audio file
    */
-  public static void speechMultiRegion(String gcsUri) {
+  public static void speechMultiRegion(String gcsUri) throws Exception {
     // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
     String endPoint = "eu-speech.googleapis.com:443";
     SpeechSettings speechSettings =
