@@ -17,6 +17,7 @@
 package com.example.speech;
 
 // [START speech_transcribe_with_multi_region_gcs]
+
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
@@ -44,33 +45,33 @@ public class SpeechMultiRegion {
     // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
     String endPoint = "eu-speech.googleapis.com:443";
     SpeechSettings speechSettings =
-    SpeechSettings.newBuilder()
-        .setEndpoint(endPoint)
-        .build();
+            SpeechSettings.newBuilder()
+              .setEndpoint(endPoint)
+              .build();
 
     // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     try (SpeechClient speech = SpeechClient.create(speechSettings)) {
 
-       // Configure remote file request 
-       RecognitionConfig config =
-           RecognitionConfig.newBuilder()
-               .setEncoding(AudioEncoding.FLAC)
-               .setLanguageCode("en-US")
-               .setSampleRateHertz(16000)
-               .build();
+      // Configure remote file request 
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
+            .setEncoding(AudioEncoding.FLAC)
+            .setLanguageCode("en-US")
+            .setSampleRateHertz(16000)
+            .build();
 
-        // Set the remote path for the audio file
-       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
+      // Set the remote path for the audio file
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
 
-       // Use blocking call to get audio transcript
-       RecognizeResponse response = speech.recognize(config, audio);
-       List<SpeechRecognitionResult> results = response.getResultsList();
+      // Use blocking call to get audio transcript
+      RecognizeResponse response = speech.recognize(config, audio);
+      List<SpeechRecognitionResult> results = response.getResultsList();
 
-       for (SpeechRecognitionResult result : results) {
-       // There can be several alternative transcripts for a given chunk of speech. Just use the
-       // first (most likely) one here.
-       SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-       System.out.printf("Transcription: %s\n", alternative.getTranscript());
+      for (SpeechRecognitionResult result : results) {
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+        System.out.printf("Transcription: %s\n", alternative.getTranscript());
       }
     }
   }
