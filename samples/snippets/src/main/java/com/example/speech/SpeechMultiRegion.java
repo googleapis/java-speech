@@ -24,55 +24,55 @@ import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
+import com.google.cloud.speech.v1.SpeechSettings;
 import java.io.IOException;
 import java.util.List;
 
 public class SpeechMultiRegion {
 
-    public void speechMultiRegion() throws Exception {
-        String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
-        speechMultiRegion(uriPath);
+  public void speechMultiRegion() throws Exception {
+    String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
+    speechMultiRegion(uriPath);
+  }
+
+  /**
+   * Transcribe a remote audio file with multi-channel recognition
+   *
+   * @param gcsUri the path to the audio file
+   */
+  public static void speechMultiRegion(String gcsUri) {
+    // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
+    String endPoint = "eu-speech.googleapis.com:443";
+    SpeechSettings speechSettings =
+    SpeechSettings.newBuilder()
+        .setEndpoint(endPoint)
+        .build();
+
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
+    try (SpeechClient speech = SpeechClient.create(speechSettings)) {
+
+       // Configure remote file request 
+       RecognitionConfig config =
+           RecognitionConfig.newBuilder()
+               .setEncoding(AudioEncoding.FLAC)
+               .setLanguageCode("en-US")
+               .setSampleRateHertz(16000)
+               .build();
+
+        // Set the remote path for the audio file
+       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
+
+       // Use blocking call to get audio transcript
+       RecognizeResponse response = speech.recognize(config, audio);
+       List<SpeechRecognitionResult> results = response.getResultsList();
+
+       for (SpeechRecognitionResult result : results) {
+       // There can be several alternative transcripts for a given chunk of speech. Just use the
+       // first (most likely) one here.
+       SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+       System.out.printf("Transcription: %s\n", alternative.getTranscript());
+      }
     }
-
-    /**
-     * Transcribe a remote audio file with multi-channel recognition
-     *
-     * @param gcsUri the path to the audio file
-     */
-    public static void speechMultiRegion(String gcsUri) {
-
-        // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
-        String endPoint = "eu-speech.googleapis.com:443";
-        SpeechSettings speechSettings =
-        SpeechSettings.newBuilder()
-            .setEndpoint(endPoint)
-            .build();
-
-        // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
-        try (SpeechClient speech = SpeechClient.create(speechSettings)) {
-
-            // Configure remote file request 
-            RecognitionConfig config =
-                RecognitionConfig.newBuilder()
-                    .setEncoding(AudioEncoding.FLAC)
-                    .setLanguageCode("en-US")
-                    .setSampleRateHertz(16000)
-                    .build();
-    
-            // Set the remote path for the audio file
-            RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
-    
-            // Use blocking call to get audio transcript
-            RecognizeResponse response = speech.recognize(config, audio);
-            List<SpeechRecognitionResult> results = response.getResultsList();
-    
-            for (SpeechRecognitionResult result : results) {
-            // There can be several alternative transcripts for a given chunk of speech. Just use the
-            // first (most likely) one here.
-            SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-            System.out.printf("Transcription: %s\n", alternative.getTranscript());
-            }
-        }
-    }
+  }
 }
 // [END speech_transcribe_with_multi_region_gcs]
