@@ -29,7 +29,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class SpeechMultiRegionTest {
+public class SpeechTranscribeMultiRegionTest {
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private ByteArrayOutputStream bout;
   private PrintStream stdout;
@@ -49,8 +49,8 @@ public class SpeechMultiRegionTest {
   }
 
   @Test
-  public void testSpeechMultiRegion() throws Exception {
-    SpeechMultiRegion.speechMultiRegion(AUDIO_FILE);
+  public void testSpeechTranscribeMultiRegion() throws Exception {
+    SpeechTranscribeMultiRegion.speechTranscribeMultiRegion(AUDIO_FILE);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }

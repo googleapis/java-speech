@@ -29,11 +29,11 @@ import com.google.cloud.speech.v1.SpeechSettings;
 import java.io.IOException;
 import java.util.List;
 
-public class SpeechMultiRegion {
+public class SpeechTranscribeMultiRegion {
 
-  public void speechMultiRegion() throws Exception {
+  public void speechTranscribeMultiRegion() throws Exception {
     String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
-    speechMultiRegion(uriPath);
+    speechTranscribeMultiRegion(uriPath);
   }
 
   /**
@@ -41,7 +41,7 @@ public class SpeechMultiRegion {
    *
    * @param gcsUri the path to the audio file
    */
-  public static void speechMultiRegion(String gcsUri) throws Exception {
+  public static void speechTranscribeMultiRegion(String gcsUri) throws Exception {
     // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
     String endPoint = "eu-speech.googleapis.com:443";
     SpeechSettings speechSettings =
