@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google Inc.
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 
 package com.example.speech;
 
-// [START speech_quickstart]
-// Imports the Google Cloud client library
+// [START speech_transcribe_with_multi_region_gcs]
+
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
@@ -25,42 +25,55 @@ import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1.SpeechRecognitionResult;
-import com.google.protobuf.ByteString;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.google.cloud.speech.v1.SpeechSettings;
+import java.io.IOException;
 import java.util.List;
 
-public class QuickstartSample {
+public class SpeechTranscribeMultiRegion {
 
-  /** Demonstrates using the Speech API to transcribe an audio file. */
-  public static void main(String... args) throws Exception {
-    // Instantiates a client
-    try (SpeechClient speechClient = SpeechClient.create()) {
+  public void speechTranscribeMultiRegion() throws Exception {
+    String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
+    speechTranscribeMultiRegion(uriPath);
+  }
 
-      // The path to the audio file to transcribe
-      String gcsUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
+  /**
+   * Transcribe a remote audio file with multi-channel recognition
+   *
+   * @param gcsUri the path to the audio file
+   */
+  public static void speechTranscribeMultiRegion(String gcsUri) throws Exception {
+    // Use the SpeechSettings to initialize the SpeechClient with the new endpoint.
+    String endPoint = "eu-speech.googleapis.com:443";
+    SpeechSettings speechSettings =
+            SpeechSettings.newBuilder()
+              .setEndpoint(endPoint)
+              .build();
 
-      // Builds the sync recognize request
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
+    try (SpeechClient speech = SpeechClient.create(speechSettings)) {
+
+      // Configure remote file request 
       RecognitionConfig config =
           RecognitionConfig.newBuilder()
-              .setEncoding(AudioEncoding.LINEAR16)
-              .setSampleRateHertz(16000)
-              .setLanguageCode("en-US")
-              .build();
+            .setEncoding(AudioEncoding.FLAC)
+            .setLanguageCode("en-US")
+            .setSampleRateHertz(16000)
+            .build();
+
+      // Set the remote path for the audio file
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
 
-      // Performs speech recognition on the audio file
-      RecognizeResponse response = speechClient.recognize(config, audio);
+      // Use blocking call to get audio transcript
+      RecognizeResponse response = speech.recognize(config, audio);
       List<SpeechRecognitionResult> results = response.getResultsList();
 
       for (SpeechRecognitionResult result : results) {
         // There can be several alternative transcripts for a given chunk of speech. Just use the
         // first (most likely) one here.
         SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
-        System.out.printf("Transcription: %s%n", alternative.getTranscript());
+        System.out.printf("Transcription: %s\n", alternative.getTranscript());
       }
     }
   }
 }
-// [END speech_quickstart]
+// [END speech_transcribe_with_multi_region_gcs]
