@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "4addf7c990145e8ecbebe1153f68bb9ab57061c5"
+        "sha": "ca749f97b673db923d578d29d07447e67dcd6af8"
       }
     },
     {
