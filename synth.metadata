@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "8fb0c2025dc625a7ba2bc720b6fbc21b197ca0b3"
+        "sha": "9719b24657df3bda93e7c1758b492d4f5885794a"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3816b080296d4d52975079fd26c110dd26ba25af"
+        "sha": "140ba24a136c63e7f10a998a63e7898aed63ea7d"
       }
     }
   ],
@@ -76,7 +76,6 @@
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
-    ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
@@ -108,6 +107,8 @@
     ".kokoro/release/promote.sh",
     ".kokoro/release/publish_javadoc.cfg",
     ".kokoro/release/publish_javadoc.sh",
+    ".kokoro/release/publish_javadoc11.cfg",
+    ".kokoro/release/publish_javadoc11.sh",
     ".kokoro/release/snapshot.cfg",
     ".kokoro/release/snapshot.sh",
     ".kokoro/release/stage.cfg",
