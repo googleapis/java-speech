@@ -31,8 +31,9 @@ import org.junit.runners.JUnit4;
 public class SpeechModelAdaptationBetaTest {
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private static final String PROJECT_ID =
-      "YOUR_PROJECT_ID"; // {api_version}/projects/{project}/locations/{location}/customClasses
-  private static final String LOCSTION = "YOUR_LOCATION"; // Region e.g. us-west1
+      System.getenv(
+          "GOOGLE_CLOUD_PROJECT"); // {api_version}/projects/{project}/locations/{location}/customClasses
+  private static final String LOCATION = "us-west1"; // Region e.g. us-west1
   private ByteArrayOutputStream bout;
   private PrintStream stdout;
   private PrintStream out;
@@ -52,7 +53,7 @@ public class SpeechModelAdaptationBetaTest {
 
   @Test
   public void testSpeechModelAdaptationBeta() throws Exception {
-    SpeechModelAdaptationBeta.transcribeWithModelAdaptation(PROJECT_ID, LOCSTION, AUDIO_FILE);
+    SpeechModelAdaptationBeta.transcribeWithModelAdaptation(PROJECT_ID, LOCATION, AUDIO_FILE);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
   }

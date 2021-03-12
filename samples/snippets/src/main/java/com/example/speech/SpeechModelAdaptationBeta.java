@@ -41,7 +41,7 @@ public class SpeechModelAdaptationBeta {
     String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
     String projectId =
         "YOUR_PROJECT_ID"; // {api_version}/projects/{project}/locations/{location}/customClasses
-    String location = "YOUR_LOCATION"; // Region e.g. us-west1
+    String location = "LOCATION_REGION"; // Region e.g. us-west1
     transcribeWithModelAdaptation(projectId, location, uriPath);
   }
 
