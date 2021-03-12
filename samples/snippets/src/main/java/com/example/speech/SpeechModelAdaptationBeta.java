@@ -115,7 +115,7 @@ public class SpeechModelAdaptationBeta {
         // Builds the sync recognize request
         RecognitionConfig config =
             RecognitionConfig.newBuilder()
-                .setEncoding(AudioEncoding.LINEAR16)
+                .setEncoding(AudioEncoding.FLAC)
                 .setSampleRateHertz(24000)
                 .setLanguageCode("en-US")
                 .setAdaptation(speechAdaptation) // Set the adaptation object
