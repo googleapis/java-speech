@@ -51,7 +51,7 @@ public class SpeechModelAdaptationBetaTest {
   }
 
   @Test
-  public void testSpeechProfanityFilter() throws Exception {
+  public void testSpeechModelAdaptationBeta() throws Exception {
     SpeechModelAdaptationBeta.transcribeWithModelAdaptation(PROJECT_ID, LOCSTION, AUDIO_FILE);
     String got = bout.toString();
     assertThat(got).contains("how old is the Brooklyn Bridge");
