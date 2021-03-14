@@ -123,7 +123,7 @@ public class SpeechModelAdaptationBeta {
         RecognitionConfig config =
             RecognitionConfig.newBuilder()
                 .setEncoding(AudioEncoding.FLAC)
-                .setSampleRateHertz(24000)
+                .setSampleRateHertz(16000)
                 .setLanguageCode("en-US")
                 .setAdaptation(speechAdaptation) // Set the adaptation object
                 .build();
