@@ -18,22 +18,27 @@ package com.example.speech;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.speech.v1p1beta1.AdaptationClient;
+import com.google.cloud.speech.v1p1beta1.CustomClassName;
+import com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest;
+import com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest;
+import com.google.cloud.speech.v1p1beta1.PhraseSetName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class SpeechModelAdaptationBetaTest {
+  private static String UNIQUE_ID = UUID.randomUUID().toString();
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private static final String PROJECT_ID =
       System.getenv(
           "GOOGLE_CLOUD_PROJECT"); // {api_version}/projects/{project}/locations/{location}/customClasses
   private static final String LOCATION = "us-west1"; // Region e.g. us-west1
+  private static final String CUSTOM_CLASS_ID = "customClassId" + UNIQUE_ID;
+  private static final String PHRASE_SET_ID = "phraseSetId" + UNIQUE_ID;
   private ByteArrayOutputStream bout;
   private PrintStream stdout;
   private PrintStream out;
@@ -49,12 +54,28 @@ public class SpeechModelAdaptationBetaTest {
   @After
   public void tearDown() {
     System.setOut(stdout);
+    try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+      // clean up resources
+      DeleteCustomClassRequest customClassDeleteRequest =
+          DeleteCustomClassRequest.newBuilder()
+              .setName(CustomClassName.of(PROJECT_ID, LOCATION, CUSTOM_CLASS_ID).toString())
+              .build();
+      adaptationClient.deleteCustomClass(customClassDeleteRequest);
+
+      // clean up resources
+      DeletePhraseSetRequest phraseSetDeleteRequest =
+          DeletePhraseSetRequest.newBuilder()
+              .setName(PhraseSetName.of(PROJECT_ID, LOCATION, PHRASE_SET_ID).toString())
+              .build();
+      adaptationClient.deletePhraseSet(phraseSetDeleteRequest);
+    }
   }
 
   @Test
   public void testSpeechModelAdaptationBeta() throws Exception {
-    SpeechModelAdaptationBeta.transcribeWithModelAdaptation(PROJECT_ID, LOCATION, AUDIO_FILE);
+    SpeechModelAdaptationBeta.transcribeWithModelAdaptation(
+        PROJECT_ID, LOCATION, AUDIO_FILE, CUSTOM_CLASS_ID, PHRASE_SET_ID);
     String got = bout.toString();
-    assertThat(got).contains("how old is the Brooklyn Bridge");
+    assertThat(got).contains("Adapted Transcription:");
   }
 }

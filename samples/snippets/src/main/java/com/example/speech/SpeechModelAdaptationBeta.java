@@ -37,12 +37,16 @@ import java.util.List;
 
 public class SpeechModelAdaptationBeta {
 
-  public void transcribeWithModelAdaptation() throws Exception {
+  public static void main(String[] args) throws Exception {
     String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
-    String projectId =
-        "YOUR_PROJECT_ID"; // {api_version}/projects/{project}/locations/{location}/customClasses
+    // {api_version}/projects/{project}/locations/{location}/customClasses
+    String projectId = "YOUR_PROJECT_ID";
     String location = "LOCATION_REGION"; // Region e.g. us-west1
-    transcribeWithModelAdaptation(projectId, location, uriPath);
+    // This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+    String customClassId = "YOUR-CUSTOM-CLASS-ID";
+    // This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+    String phraseSetId = "YOUR-PHRASE-SET-ID";
+    transcribeWithModelAdaptation(projectId, location, uriPath, customClassId, phraseSetId);
   }
 
   /**
@@ -52,15 +56,16 @@ public class SpeechModelAdaptationBeta {
    * @param location the region
    * @param gcsUri the path to the audio file
    */
-  public static void transcribeWithModelAdaptation(String projectId, String location, String gcsUri)
+  public static void transcribeWithModelAdaptation(
+      String projectId, String location, String gcsUri, String customClassId, String phraseSetId)
       throws Exception {
-    // Initialize the adaptation client that will be used to send requests.
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
     try (AdaptationClient adaptationClient = AdaptationClient.create()) {
 
-      /*
-          Create`PhraseSet` and `CustomClasses` to create custom lists of similar
-          items that are likely to occur in your input data.
-      */
+      //  Create `PhraseSet` and `CustomClasses` to create custom lists of similar
+      //  items that are likely to occur in your input data.
 
       // The parent resource where the custom class and phrase set will be created.
       LocationName parent = LocationName.of(projectId, location);
@@ -69,7 +74,7 @@ public class SpeechModelAdaptationBeta {
       CreateCustomClassRequest classRequest =
           CreateCustomClassRequest.newBuilder()
               .setParent(parent.toString())
-              .setCustomClassId("customClassId1871032322")
+              .setCustomClassId(customClassId)
               .setCustomClass(
                   CustomClass.newBuilder()
                       .addItems(ClassItem.newBuilder().setValue("sushido"))
@@ -83,13 +88,13 @@ public class SpeechModelAdaptationBeta {
       CreatePhraseSetRequest phraseRequest =
           CreatePhraseSetRequest.newBuilder()
               .setParent(parent.toString())
-              .setPhraseSetId("phraseSetId959902180")
+              .setPhraseSetId(phraseSetId)
               .setPhraseSet(
                   PhraseSet.newBuilder()
                       .setBoost(10)
                       .addPhrases(
                           Phrase.newBuilder()
-                              .setValue("Visit restaurants like ${customClassId1871032322}"))
+                              .setValue("Visit restaurants like " + "${" + customClassId + "}"))
                       .build())
               .build();
       PhraseSet phraseResponse = adaptationClient.createPhraseSet(phraseRequest);
@@ -106,7 +111,9 @@ public class SpeechModelAdaptationBeta {
               .addPhraseSets(phraseResponse)
               .build();
 
-      // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
+      // Initialize client that will be used to send requests. This client only needs to be created
+      // once, and can be reused for multiple requests. After completing all of your requests, call
+      // the "close" method on the client to safely clean up any remaining background resources.
       try (SpeechClient speechClient = SpeechClient.create()) {
 
         // The path to the audio file to transcribe
