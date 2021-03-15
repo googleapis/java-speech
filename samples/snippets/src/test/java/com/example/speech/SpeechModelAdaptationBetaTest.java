@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public class SpeechModelAdaptationBetaTest {
   private static String UNIQUE_ID = UUID.randomUUID().toString();
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String LOCATION = "us-west1"; // Region e.g. us-west1
+  private static final String LOCATION = "us-west1";
   private static final String CUSTOM_CLASS_ID = "customClassId" + UNIQUE_ID;
   private static final String PHRASE_SET_ID = "phraseSetId" + UNIQUE_ID;
   private ByteArrayOutputStream bout;

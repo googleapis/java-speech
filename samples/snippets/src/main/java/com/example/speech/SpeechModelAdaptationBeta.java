@@ -16,7 +16,8 @@
 
 package com.example.speech;
 
-// [START speech_transcribe_with_model_adaptation_gcs]
+// [START speech_transcribe_with_model_adaptation_gcs_beta]
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.speech.v1p1beta1.AdaptationClient;
 import com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest;
 import com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest;
@@ -39,9 +40,9 @@ public class SpeechModelAdaptationBeta {
 
   public static void main(String[] args) throws Exception {
     String uriPath = "gs://cloud-samples-tests/speech/brooklyn.flac";
-    // {api_version}/projects/{project}/locations/{location}/customClasses
     String projectId = "YOUR_PROJECT_ID";
-    String location = "LOCATION_REGION"; // Region e.g. us-west1
+    // Region e.g. us-west1
+    String location = "LOCATION_REGION";
     // This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
     String customClassId = "YOUR-CUSTOM-CLASS-ID";
     // This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
@@ -100,10 +101,8 @@ public class SpeechModelAdaptationBeta {
               .build();
       PhraseSet phraseResponse = adaptationClient.createPhraseSet(phraseRequest);
 
-      /*
-          Next section shows how to use the newly created custom class and phrase set
-          to send a transcription request with speech adaptation
-      */
+      // Next section shows how to use the newly created custom class and phrase set
+      // to send a transcription request with speech adaptation
 
       // Speech adaptation configuration
       SpeechAdaptation speechAdaptation =
@@ -141,7 +140,9 @@ public class SpeechModelAdaptationBeta {
           System.out.printf("Adapted Transcription: %s%n", alternative.getTranscript());
         }
       }
+    } catch (ApiException e) {
+      System.out.println("Client Interaction Error: \n" + e.toString());
     }
   }
 }
-// [END speech_transcribe_with_model_adaptation_gcs]
+// [END speech_transcribe_with_model_adaptation_gcs_beta]
