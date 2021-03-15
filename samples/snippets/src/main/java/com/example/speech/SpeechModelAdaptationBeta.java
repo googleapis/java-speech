@@ -94,7 +94,8 @@ public class SpeechModelAdaptationBeta {
                       .setBoost(10)
                       .addPhrases(
                           Phrase.newBuilder()
-                              .setValue("Visit restaurants like " + "${" + customClassId + "}"))
+                              .setValue(
+                                  String.format("Visit restaurants like %s%n", customClassId)))
                       .build())
               .build();
       PhraseSet phraseResponse = adaptationClient.createPhraseSet(phraseRequest);
