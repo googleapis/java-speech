@@ -129,7 +129,7 @@ public class SpeechModelAdaptationBeta {
                 .build();
         RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
 
-        // Performs speech recognition on the audio file
+        // Performs speech recognition on the audio file.
         RecognizeResponse response = speechClient.recognize(config, audio);
         List<SpeechRecognitionResult> results = response.getResultsList();
 
