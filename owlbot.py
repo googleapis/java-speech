@@ -14,19 +14,6 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
 import synthtool.languages.java as java
-
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-service = 'speech'
-versions = ['v1', 'v1p1beta1']
-
-for version in versions:
-  library = java.bazel_library(
-      service=service,
-      version=version,
-      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
-  )
 
 java.common_templates()
