@@ -32,7 +32,8 @@ import org.junit.Test;
 public class ExportToStorageBetaTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String AUDIO_STORAGE_URI = "gs://cloud-samples-data/speech/commercial_mono.wav";
+  private static final String AUDIO_STORAGE_URI =
+      "gs://cloud-samples-data/speech/commercial_mono.wav";
   private static final String PREFIX = "EXPORT_TEST_OUTPUTS";
   private static final String OUTPUT_STORAGE_URI =
       String.format("gs://%s/%s/%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
