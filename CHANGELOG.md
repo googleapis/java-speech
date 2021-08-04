@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.0](https://www.github.com/googleapis/java-speech/compare/v1.29.4...v1.30.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#599](https://www.github.com/googleapis/java-speech/issues/599)) ([7b3635e](https://www.github.com/googleapis/java-speech/commit/7b3635e0728684e21c8a2a52ffff158fd5e130c8))
+
 ### [1.29.4](https://www.github.com/googleapis/java-speech/compare/v1.29.3...v1.29.4) (2021-07-22)
 
 
