@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e1738ee972b49fd0c4d4718b035444495142b781",
-        "internalRef": "391407209"
+        "sha": "76bed90afcd459c0345b1bd0ab3e5cd53260e04d",
+        "internalRef": "391603958"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e1738ee972b49fd0c4d4718b035444495142b781",
-        "internalRef": "391407209"
+        "sha": "76bed90afcd459c0345b1bd0ab3e5cd53260e04d",
+        "internalRef": "391603958"
       }
     },
     {
@@ -256,6 +256,8 @@
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeRequestOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponse.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/StreamingRecognizeResponseOrBuilder.java",
+    "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/TranscriptNormalization.java",
+    "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/TranscriptNormalizationOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/TranscriptOutputConfig.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/TranscriptOutputConfigOrBuilder.java",
     "proto-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/UpdateCustomClassRequest.java",
