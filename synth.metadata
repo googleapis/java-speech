@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "c899fbcb8bc09af473b3d3fa5eb9656097859a43"
+        "sha": "c5836f297fb05ef5523ad40cf3dd7f85a2a03a8d"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "10185d07a4db1d76a888a119aeab1f2287b35105",
-        "internalRef": "389755489"
+        "sha": "e1738ee972b49fd0c4d4718b035444495142b781",
+        "internalRef": "391407209"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "10185d07a4db1d76a888a119aeab1f2287b35105",
-        "internalRef": "389755489"
+        "sha": "e1738ee972b49fd0c4d4718b035444495142b781",
+        "internalRef": "391407209"
       }
     },
     {
