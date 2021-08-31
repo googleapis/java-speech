@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "c5836f297fb05ef5523ad40cf3dd7f85a2a03a8d"
+        "sha": "3f4df2be68f8f89086ca9872b5961f30ca0d5ecb"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ff01716e16d2c6e87eaf87197b753ac9fcbbed5d"
+        "sha": "e2aa5bcc3356d9e3b8b53de3b5c86226447d3a22"
       }
     }
   ],
@@ -61,6 +61,7 @@
     ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
+    ".github/release-trigger.yml",
     ".github/snippet-bot.yml",
     ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
