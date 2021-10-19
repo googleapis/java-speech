@@ -1,5 +1,35 @@
 # Changelog
 
+### [2.1.2](https://www.github.com/googleapis/java-speech/compare/v2.1.1...v2.1.2) (2021-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.4.0 ([#712](https://www.github.com/googleapis/java-speech/issues/712)) ([02a9116](https://www.github.com/googleapis/java-speech/commit/02a91166df13126b2122bb7368c3107e32d5212a))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.9 ([#711](https://www.github.com/googleapis/java-speech/issues/711)) ([40dbda9](https://www.github.com/googleapis/java-speech/commit/40dbda96f894fb4e482d0f823ba054abf8661e0e))
+
+### [2.1.1](https://www.github.com/googleapis/java-speech/compare/v2.1.0...v2.1.1) (2021-10-05)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.1.7 ([#703](https://www.github.com/googleapis/java-speech/issues/703)) ([5f13f04](https://www.github.com/googleapis/java-speech/commit/5f13f0432f76f7ba00f36c0a21ae9c426b0f5c5d))
+
+## [2.1.0](https://www.github.com/googleapis/java-speech/compare/v2.0.4...v2.1.0) (2021-09-27)
+
+
+### Features
+
+* add output_config request field ([#684](https://www.github.com/googleapis/java-speech/issues/684)) ([4353458](https://www.github.com/googleapis/java-speech/commit/4353458f1aa1615c6b44663de91ac3801fc060cc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.3.0 ([#690](https://www.github.com/googleapis/java-speech/issues/690)) ([a1dd2c7](https://www.github.com/googleapis/java-speech/commit/a1dd2c72a364ad98bf5f2715f74ad30e533bb808))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.4 ([#687](https://www.github.com/googleapis/java-speech/issues/687)) ([96aace9](https://www.github.com/googleapis/java-speech/commit/96aace92a7a02f1ae30711238b5e7609234e2706))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.5 ([#692](https://www.github.com/googleapis/java-speech/issues/692)) ([c782d66](https://www.github.com/googleapis/java-speech/commit/c782d6616ae3b3d2b408e23c23c3329a222101c9))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.6 ([#695](https://www.github.com/googleapis/java-speech/issues/695)) ([60a1ee2](https://www.github.com/googleapis/java-speech/commit/60a1ee26a42e92857493f566ce6d5f7feb05dbdb))
+
 ### [2.0.4](https://www.github.com/googleapis/java-speech/compare/v2.0.3...v2.0.4) (2021-09-15)
 
 
