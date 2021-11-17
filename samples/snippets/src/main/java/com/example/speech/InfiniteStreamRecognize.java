@@ -75,7 +75,7 @@ public class InfiniteStreamRecognize {
     }
 
     try {
-      infiniteStreamingRecognize(options.langCode);
+      infiniteStreamingRecognize(options.getLangCode());
     } catch (Exception e) {
       System.out.println("Exception caught: " + e);
     }
