@@ -27,13 +27,11 @@ import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig;
+import com.google.cloud.storage.BlobId;
+import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
-import com.google.protobuf.util.JsonFormat;
-import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.Storage;
 import org.json.JSONObject;
 
 public class ExportToStorageBeta {
@@ -46,7 +44,14 @@ public class ExportToStorageBeta {
     String encoding = "LINEAR16"; // encoding of the audio
     int sampleRateHertz = 8000;
     String languageCode = "en-US"; // language code BCP-47_LANGUAGE_CODE_OF_AUDIO
-    exportToStorage(inputUri, outputStorageUri, encoding, sampleRateHertz, languageCode, bucketName, objectName);
+    exportToStorage(
+        inputUri,
+        outputStorageUri,
+        encoding,
+        sampleRateHertz,
+        languageCode,
+        bucketName,
+        objectName);
   }
 
   // Exports the recognized output to specified GCS destination.
@@ -107,19 +112,19 @@ public class ExportToStorageBeta {
       // Specefy the proto type message
       LongRunningRecognizeResponse.Builder builder = LongRunningRecognizeResponse.newBuilder();
 
-      // Construct a parser 
+      // Construct a parser
       JsonFormat.Parser parser = JsonFormat.parser().ignoringUnknownFields();
 
       // Parses from JSON into a protobuf message.
       parser.merge(json, builder);
-      
+
       // Get the converted values
       LongRunningRecognizeResponse storageResponse = builder.build();
 
       System.out.println("Results saved to specified output Cloud Storage bucket.");
 
       String output =
-      storageResponse.getResultsList().stream()
+          storageResponse.getResultsList().stream()
               .map(result -> String.valueOf(result.getAlternatives(0).getTranscript()))
               .collect(Collectors.joining("\n"));
       System.out.printf("Transcription: %s", output);
