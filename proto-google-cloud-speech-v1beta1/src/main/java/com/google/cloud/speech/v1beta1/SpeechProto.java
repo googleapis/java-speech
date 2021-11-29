@@ -93,8 +93,7 @@ public final class SpeechProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + ".google/cloud/speech/v1beta1/cloud_spee"
-          + "ch.proto\022\033google.cloud.speech.v1beta1\032\034google/api/annotations.proto\032#google/longrunning/operations.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\224\001\n"
+          + ".google/cloud/speech/v1beta1/cloud_speech.proto\022\033google.cloud.speech.v1beta1\032\034google/api/annotations.proto\032#google/longrunning/operations.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\224\001\n"
           + "\024SyncRecognizeRequest\022>\n"
           + "\006config\030\001 \001(\0132..google.cloud.speech.v1beta1.RecognitionConfig\022<\n"
           + "\005audio\030\002 \001(\0132-.google.cloud.speech.v1beta1.RecognitionAudio\"\225\001\n"
