@@ -27,7 +27,10 @@ import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig;
+import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -71,6 +74,9 @@ public class ExportToStorageBeta {
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(inputUri).build();
 
       AudioEncoding audioEncoding = AudioEncoding.valueOf(encoding);
+
+      // Instantiates a client
+      Storage storage = StorageOptions.getDefaultInstance().getService();
 
       // Pass in the URI of the Cloud Storage bucket to hold the transcription
       TranscriptOutputConfig outputConfig =
