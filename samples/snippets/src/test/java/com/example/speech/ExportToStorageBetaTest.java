@@ -35,8 +35,9 @@ public class ExportToStorageBetaTest {
   private static final String AUDIO_STORAGE_URI =
       "gs://cloud-samples-data/speech/commercial_mono.wav";
   private static final String PREFIX = "EXPORT_TEST_OUTPUTS";
+  private static final String BUCKET_NAME = UUID.randomUUID();
   private static final String OUTPUT_STORAGE_URI =
-      String.format("gs://%s/%s/%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
+      String.format("gs://%s/%s/%s/", PROJECT_ID, PREFIX, BUCKET_NAME);
   private static final String ENCODING = "LINEAR16";
   private static final String LANGUAGE_CODE = "en-US";
 
@@ -89,7 +90,7 @@ public class ExportToStorageBetaTest {
   @Test
   public void testExportToStorageBeta() throws Exception {
     ExportToStorageBeta.exportToStorage(
-        AUDIO_STORAGE_URI, OUTPUT_STORAGE_URI, ENCODING, SAMPLE_RATE_HERTZ, LANGUAGE_CODE);
+        AUDIO_STORAGE_URI, OUTPUT_STORAGE_URI, ENCODING, SAMPLE_RATE_HERTZ, LANGUAGE_CODE, BUCKET_NAME, PREFIX);
     String got = bout.toString();
     assertThat(got).contains("Transcription:");
   }

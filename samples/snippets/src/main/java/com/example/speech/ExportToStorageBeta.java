@@ -60,7 +60,9 @@ public class ExportToStorageBeta {
       String outputStorageUri,
       String encoding,
       int sampleRateHertz,
-      String languageCode)
+      String languageCode,
+      String bucketName,
+      String objectName)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
