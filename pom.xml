@@ -145,12 +145,7 @@
   </properties>
 
   <dependencyManagement>
-      <dependencies>
-        <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>20210307</version>
-      </dependency>
+    <dependencies>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
