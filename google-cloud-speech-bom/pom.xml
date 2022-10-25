@@ -73,7 +73,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v2</artifactId>
-        <version>2.6.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v2:current} -->
+        <version>4.0.0</version><!-- {x-version-update:grpc-google-cloud-speech-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
