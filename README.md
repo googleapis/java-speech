@@ -69,13 +69,13 @@ implementation 'com.google.cloud:google-cloud-speech'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:4.0.0'
+implementation 'com.google.cloud:google-cloud-speech:4.1.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.1.0"
 ```
 
 ## Authentication
@@ -156,18 +156,9 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-speech/tree/m
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
 | Export To Storage Beta | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/ExportToStorageBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/ExportToStorageBeta.java) |
-| Infinite Stream Recognize | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognize.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognize.java) |
-| Infinite Stream Recognize Options | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognizeOptions.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/InfiniteStreamRecognizeOptions.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/QuickstartSample.java) |
-| Recognize | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/Recognize.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/Recognize.java) |
-| Recognize Beta | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) |
-| Speech Adaptation | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) |
 | Speech Model Adaptation Beta | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/SpeechModelAdaptationBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechModelAdaptationBeta.java) |
-| Speech Profanity Filter | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) |
 | Speech Transcribe Multi Region | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/SpeechTranscribeMultiRegion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechTranscribeMultiRegion.java) |
 | Transcribe Context Classes | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) |
-| Transcribe Diarization | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/TranscribeDiarization.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeDiarization.java) |
-| Transcribe Diarization Gcs | [source code](https://github.com/googleapis/java-speech/blob/main/samples/snippets/src/main/java/com/example/speech/TranscribeDiarizationGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeDiarizationGcs.java) |
 
 
 
