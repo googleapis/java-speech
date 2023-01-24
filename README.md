@@ -62,13 +62,13 @@ implementation 'com.google.cloud:google-cloud-speech'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:4.3.0'
+implementation 'com.google.cloud:google-cloud-speech:4.4.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.4.0"
 ```
 
 ## Authentication
